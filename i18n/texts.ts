@@ -242,7 +242,7 @@ experience: {
   },
 
   education: {
-    pt: [
+       pt: [
 {
   period: "2024 - 2028",
   title: "Cursando Engenharia de Software",
@@ -263,8 +263,9 @@ experience: {
     ],
   },
 },
+
 footer: {
-  name: {
+   name: {
     pt: "Davi Nunes Carvalho",
     en: "Davi Nunes Carvalho",
   },
@@ -290,7 +291,7 @@ footer: {
     pt: ".Engenheiro de Software",
     en: ".Software Engineer",
   },
-  firstName: {
+   firstName: {
     pt: "Davi",
     en: "Davi",
   },
@@ -300,9 +301,7 @@ footer: {
   },
   info: {
     pt: ["Belo Horizonte,Minas Gerais", "Eng. de Software", "Full Stack Developer"],
-    en: ["Belo Horizonte,Minas Gerais", "Software Engineer", "Full Stack Developer"],
-    
-
+    en: ["Belo Horizonte,Minas Gerais", "Software Engineer", "Full Stack Developer"], },
   edition: {
     pt: "Vol. I - Ed. 2026",
     en: "Vol. I - Ed. 2026",
@@ -350,8 +349,8 @@ footer: {
     },
     list: {
       pt: [
-      {
-  id: "PJ-001",
+        {
+         id: "PJ-001",
   title: "Re.use",
   subtitle: "Plataforma de Brechó Online",
   description:
@@ -376,8 +375,8 @@ footer: {
   github: "https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2025-1-ti2-3687100-brecho-re-use"
 },
 
-       {
-id: "PJ-002",
+        {
+         id: "PJ-002",
 title: "Japan Motors ",
 subtitle: "Sistema de Gerenciamento de Oficina",
 description:
@@ -398,7 +397,6 @@ year: "2025",
 link: "https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2025-2-ti3-9545100-Oficina-Mecanica",
 github: "https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2025-2-ti3-9545100-Oficina-Mecanica"
 },
-
         {
           id: "PJ-003",
           title: "Pulse AI",
@@ -551,28 +549,28 @@ skills: {
       {
         title: "Frontend",
         skills: [
-          { name: "React / Next.js", level: 90 },
-          { name: "TypeScript", level: 85 },
-          { name: "Tailwind CSS", level: 95 },
-          { name: "HTML / CSS", level: 90 },
+          { name: "React / Next.js", level: 75 },
+          { name: "TypeScript", level: 70 },
+          { name: "Tailwind CSS", level: 40 },
+          { name: "HTML / CSS", level: 95 },
         ],
       },
       {
         title: "Backend",
         skills: [
           { name: "Node.js", level: 85 },
-          { name: "Python", level: 70 },
+          { name: "Python", level: 45 },
           { name: "PostgreSQL", level: 75 },
-          { name: "REST APIs", level: 85 },
+          { name: "REST APIs", level: 95 },
         ],
       },
       {
         title: "Tools",
         skills: [
-          { name: "Git / GitHub", level: 90 },
+          { name: "Git / GitHub", level: 99 },
           { name: "Docker", level: 65 },
-          { name: "Figma", level: 75 },
-          { name: "Linux", level: 70 },
+          { name: "Figma", level: 80 },
+          { name: "Linux", level: 10 },
         ],
       },
     ],
@@ -581,28 +579,28 @@ skills: {
       {
         title: "Frontend",
         skills: [
-          { name: "React / Next.js", level: 90 },
-          { name: "TypeScript", level: 85 },
-          { name: "Tailwind CSS", level: 95 },
-          { name: "HTML / CSS", level: 90 },
+          { name: "React / Next.js", level: 75 },
+          { name: "TypeScript", level: 70 },
+          { name: "Tailwind CSS", level: 40 },
+          { name: "HTML / CSS", level: 95 },
         ],
       },
       {
         title: "Backend",
         skills: [
           { name: "Node.js", level: 85 },
-          { name: "Python", level: 70 },
+          { name: "Python", level: 45 },
           { name: "PostgreSQL", level: 75 },
-          { name: "REST APIs", level: 85 },
+          { name: "REST APIs", level: 95 },
         ],
       },
       {
         title: "Tools",
         skills: [
-          { name: "Git / GitHub", level: 90 },
+          { name: "Git / GitHub", level: 99 },
           { name: "Docker", level: 65 },
-          { name: "Figma", level: 75 },
-          { name: "Linux", level: 70 },
+          { name: "Figma", level: 80 },
+          { name: "Linux", level: 10 },
         ],
       },
     ],
@@ -612,7 +610,7 @@ skills: {
     "React", "Next.js", "TypeScript", "JavaScript", "Node.js",
     "Python", "PostgreSQL", "MongoDB", "Tailwind CSS", "Sass",
     "Docker", "Git", "Figma", "Jest", "Prisma", "GraphQL",
-    "Firebase", "Vercel", "AWS", "Redis",
+    "Firebase", "Vercel", "AWS", "Redis","spring-boot","Postman","Java","c",""
   ],
 },
-}}
+}

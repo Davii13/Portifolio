@@ -180,7 +180,7 @@ export function DownloadSection() {
             className="flex flex-col sm:flex-row gap-4"
           >
             <motion.a
-              href="/cv.pdf"
+              href="images/Currículo_Davi_NunesCarvalho.pdf"
               download
               className="group relative flex items-center gap-4 bg-primary text-primary-foreground px-8 py-5 font-mono text-xs uppercase tracking-widest overflow-hidden"
             >

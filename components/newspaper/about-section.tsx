@@ -83,7 +83,7 @@ export function AboutSection() {
               <div className="relative overflow-hidden border-2 border-card-foreground/20 max-w-xs">
                 <motion.div animate={{ scale: imgHovered ? 1.05 : 1 }}>
                   <Image
-                    src="/images/atletico.png"
+                    src="/images/atletico.jpg"
                     alt="Davi Nunes"
                     width={320}
                     height={400}

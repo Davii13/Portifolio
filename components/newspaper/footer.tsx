@@ -129,7 +129,7 @@ export function Footer() {
             {[
               { icon: Github, href: "#", label: "GitHub" },
               { icon: Linkedin, href: "#", label: "LinkedIn" },
-              { icon: Mail, href: "mailto:matheus@malta.dev", label: "Email" },
+              { icon: Mail, href: "davinunescarvalho35@gmail.com", label: "Email" },
             ].map((social) => (
               <motion.a
                 key={social.label}

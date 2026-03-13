@@ -54,26 +54,26 @@ export function ContactSection() {
     {
       icon: Mail,
       label: "Email",
-      value: "matheus@malta.dev",
-      href: "mailto:matheus@malta.dev",
+      value: "davinunescarvalho35@gmail.com",
+      href: "davinunescarvalho35@gmail.com",
     },
     {
       icon: Phone,
       label: lang === "pt" ? "Telefone" : "Phone",
-      value: "+55 (81) 99999-9999",
-      href: "tel:+5581999999999",
+      value: "+55 (31) 99614-6933",
+      href: "tel:+5531996146933",
     },
     {
       icon: MapPin,
       label: lang === "pt" ? "Localização" : "Location",
-      value: lang === "pt" ? "Recife, PE - Brasil" : "Recife, PE - Brazil",
+      value: lang === "pt" ? "Minas Gerais, MG - Brasil" : "Minas Gerais , MG - Brazil",
       href: "#",
     },
   ]
 
   const socials = [
-    { icon: Github, label: "GitHub", value: "github.com/matheusmalta", href: "#" },
-    { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/matheusmalta", href: "#" },
+    { icon: Github, label: "GitHub", value: "github.com/davii13/", href: "github.com/davii13/" },
+    { icon: Linkedin, label: "LinkedIn", value: "www.linkedin.com/in/davi-nunes-carvalho", href: "#" },
   ]
 
   return (

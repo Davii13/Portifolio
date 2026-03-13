@@ -9,8 +9,8 @@ const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfa
 const jetbrains = JetBrains_Mono({ subsets: ['latin'], variable: '--font-jetbrains' })
 
 export const metadata: Metadata = {
-  title: 'Matheus Malta | Software Engineer',
-  description: 'Portfolio de Matheus Malta - Engenheiro de Software',
+  title: 'Davi Nunes | Software Engineer',
+  description: 'Portfolio de Davi nunes - Engenheiro de Software',
 }
 
 export default function RootLayout({

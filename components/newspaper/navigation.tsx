@@ -128,7 +128,7 @@ export function Navigation() {
           className="group font-serif text-2xl font-black text-foreground tracking-tight relative"
         >
           <span className="relative inline-block transition-transform duration-200 group-hover:skew-x-[-4deg] group-hover:text-primary">
-            MM
+            DV
           </span>
           <span className="text-primary transition-transform duration-200 group-hover:scale-150 inline-block">
             .
