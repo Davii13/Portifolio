@@ -28,18 +28,18 @@ export function ContactSection() {
 
     try {
       // Disparo do email com as suas chaves reais atualizadas!
-      await emailjs.send(
-        'service_p9kcjgo',     // Seu Service ID
-        'template_xyilnpi',    // <--- Seu NOVO Template ID aqui
-        {
-          from_name: formData.name,
-          reply_to: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-        },
-        '___TqJ2bCPC2gsevV'    // Sua Public Key
-      )
-      
+await emailjs.send(
+  'service_pywzf2q',
+  'template_2jhz9qn',
+  {
+    from_name: formData.name,
+    reply_to: formData.email,
+    subject: formData.subject,
+    message: formData.message,
+    to_email: "davinunescarvalho35@gmail.com" // <- necessário
+  },
+  'Y5OZIjICTnbDNX_Xl'
+)
       alert(lang === 'pt' ? 'Mensagem enviada com sucesso!' : 'Message sent successfully!')
       setFormData({ name: "", email: "", subject: "", message: "" }) // Limpa os campos
     } catch (error) {

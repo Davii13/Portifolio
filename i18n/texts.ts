@@ -198,49 +198,52 @@ experience: {
   },
 
   experiences: {
-    pt: [
-      {
-        period: "2024 - Atual",
-        role: "Desenvolvedor Full Stack",
-        company: "TechNova Solutions",
-        location: "Recife, PE",
-        description:
-          "Desenvolvimento de aplicações web escaláveis utilizando Next.js e Node.js. Liderança técnica de squad de 4 desenvolvedores. Implementação de CI/CD e melhoria de performance em 40%.",
-        tags: ["Next.js", "Node.js", "AWS", "PostgreSQL"],
-      },
-      {
-        period: "2023 - 2024",
-        role: "Desenvolvedor Frontend",
-        company: "StartupHub Digital",
-        location: "Remoto",
-        description:
-          "Construção de interfaces responsivas e acessíveis para produtos SaaS. Migração de codebase legado de JavaScript para TypeScript. Redução de bundle size em 35%.",
-        tags: ["React", "TypeScript", "Tailwind", "Storybook"],
-      },
-    ],
+  pt: [
+    {
+      period: "2026 - Atual",
+      role: "Desenvolvedor Full Stack",
+      company: "Amavi",
+      location: "Belo Horizonte, MG",
+      description:
+        "Desenvolvimento completo (frontend e backend) de sistemas internos e melhorias em aplicações existentes, incluindo gestão de pacientes e automação de processos.",
+      tags: ["Java", "Spring Boot", "React", "MySQL"],
+    },
+    {
+      period: "2025 - 2026",
+      role: "Desenvolvedor Full Stack",
+      company: "Japan Motors",
+      location: "Belo Horizonte, MG",
+      description:
+        "Desenvolvimento completo (frontend e backend) de plataforma interna de vendas e manutenção. Otimização de performance e experiência do usuário.",
+      tags: ["React", "TypeScript", "Node.js", "REST API"],
+    },
+   
+    
+  ],
 
-    en: [
-      {
-        period: "2024 - Present",
-        role: "Full Stack Developer",
-        company: "TechNova Solutions",
-        location: "Recife, Brazil",
-        description:
-          "Development of scalable web applications using Next.js and Node.js. Technical leadership of a 4-developer squad. CI/CD implementation and 40% performance improvement.",
-        tags: ["Next.js", "Node.js", "AWS", "PostgreSQL"],
-      },
-      {
-        period: "2023 - 2024",
-        role: "Frontend Developer",
-        company: "StartupHub Digital",
-        location: "Remote",
-        description:
-          "Building responsive and accessible interfaces for SaaS products. Migrated legacy JavaScript codebase to TypeScript. Reduced bundle size by 35%.",
-        tags: ["React", "TypeScript", "Tailwind", "Storybook"],
-      },
-    ],
-  },
-
+  en: [
+    {
+      period: "2026 - Present",
+      role: "Full Stack Developer",
+      company: "Amavi",
+      location: "Belo Horizonte, Brazil",
+      description:
+        "Full stack development (frontend and backend) of internal systems and improvements on existing applications, including patient management and process automation.",
+      tags: ["Java", "Spring Boot", "React", "MySQL"],
+    },
+    {
+      period: "2025 - 2026",
+      role: "Full Stack Developer",
+      company: "Japan Motors",
+      location: "Belo Horizonte, Brazil",
+      description:
+        "Full stack development (frontend and backend) of internal sales and maintenance platform. Optimized performance and user experience.",
+      tags: ["React", "TypeScript", "Node.js", "REST API"],
+    },
+   
+   
+  ],
+},
   education: {
        pt: [
 {
@@ -347,187 +350,141 @@ footer: {
       pt: "Tecnologias",
       en: "Technologies",
     },
+
+
     list: {
-      pt: [
-        {
-         id: "PJ-001",
-  title: "Re.use",
-  subtitle: "Plataforma de Brechó Online",
-  description:
-    "Uma aplicação web para compra e venda de roupas de segunda mão, incentivando o consumo sustentável e a reutilização de peças.",
-
-  detailedDescription:
-    "Re.use é uma plataforma de brechó online desenvolvida em 2025 com o objetivo de conectar pessoas interessadas em comprar e vender roupas de segunda mão. A aplicação permite o cadastro de peças, visualização de produtos disponíveis e gerenciamento das informações da plataforma. O sistema foi desenvolvido utilizando Spring Boot no backend, MySQL para persistência de dados e HTML e CSS na construção da interface. O projeto foi destaque no evento We Make Software 2025 pela proposta de sustentabilidade e pela aplicação de tecnologia para incentivar a economia circular.",
-
-  image: "/images/reuse.gif",
-
-  tags: ["Spring Boot", "MySQL", "HTML", "CSS"],
-
-  technologies: [
-    { name: "Spring Boot", description: "Framework Java utilizado para construção do backend e da lógica do sistema" },
-    { name: "MySQL", description: "Banco de dados relacional utilizado para armazenar usuários e peças cadastradas" },
-    { name: "HTML", description: "Estruturação das páginas da aplicação web" },
-    { name: "CSS", description: "Estilização e layout da interface do usuário" }
+  pt: [
+    {
+      id: "PJ-001",
+      title: "Re.use",
+      subtitle: "Plataforma de Brechó Online",
+      description:
+        "Uma aplicação web para compra e venda de roupas de segunda mão, incentivando o consumo sustentável e a reutilização de peças.",
+      detailedDescription:
+        "Re.use é uma plataforma de brechó online desenvolvida em 2025 com o objetivo de conectar pessoas interessadas em comprar e vender roupas de segunda mão. A aplicação permite o cadastro de peças, visualização de produtos disponíveis e gerenciamento das informações da plataforma. O sistema foi desenvolvido utilizando Spring Boot no backend, MySQL para persistência de dados e HTML e CSS na construção da interface. O projeto foi destaque no evento We Make Software 2025 pela proposta de sustentabilidade e pela aplicação de tecnologia para incentivar a economia circular.",
+      image: "/images/reuse.gif",
+      tags: ["Spring Boot", "MySQL", "HTML", "CSS"],
+      technologies: [
+        { name: "Spring Boot", description: "Framework Java utilizado para construção do backend e da lógica do sistema" },
+        { name: "MySQL", description: "Banco de dados relacional utilizado para armazenar usuários e peças cadastradas" },
+        { name: "HTML", description: "Estruturação das páginas da aplicação web" },
+        { name: "CSS", description: "Estilização e layout da interface do usuário" }
+      ],
+      year: "2025",
+      link: "https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2025-1-ti2-3687100-brecho-re-use",
+      github: "https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2025-1-ti2-3687100-brecho-re-use"
+    },
+    {
+      id: "PJ-002",
+      title: "Japan Motors",
+      subtitle: "Sistema de Gerenciamento de Oficina",
+      description:
+        "Sistema web desenvolvido para otimizar a gestão de clientes, veículos e ordens de serviço da oficina Japan Motors.",
+      detailedDescription:
+        "Japan Motors System é uma aplicação web desenvolvida para melhorar a organização e o controle das atividades da oficina. A plataforma permite o cadastro de clientes e veículos, criação e acompanhamento de ordens de serviço, além do armazenamento do histórico de manutenções realizadas. Utilizando Java com Spring Boot no backend e integração com banco de dados, o sistema centraliza as informações da oficina e facilita a gestão dos processos internos, tornando o atendimento mais ágil e eficiente.",
+      image: "/images/japan-motors.gif",
+      tags: ["Java", "Spring Boot", "MySQL", "Sistema Web"],
+      technologies: [
+        { name: "Java", description: "Linguagem principal utilizada no desenvolvimento" },
+        { name: "Spring Boot", description: "Framework utilizado para criação da API e regras de negócio" },
+        { name: "MySQL", description: "Banco de dados relacional para armazenamento das informações" },
+        { name: "HTML", description: "Estrutura da interface do sistema" },
+        { name: "CSS", description: "Estilização das páginas" },
+        { name: "JavaScript", description: "Interatividade no front-end" }
+      ],
+      year: "2025",
+      link: "https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2025-2-ti3-9545100-Oficina-Mecanica",
+      github: "https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2025-2-ti3-9545100-Oficina-Mecanica"
+    },
+    {
+      id: "PJ-003",
+      title: "Amavi",
+      subtitle: "Sistema de Gestão de Pacientes e Processos",
+      description:
+        "Plataforma web que gerencia pacientes, consultas e processos internos com dashboards interativos e automação de tarefas.",
+      detailedDescription:
+        "O sistema Amavi integra cadastro de pacientes, agendamento de consultas e histórico médico em uma interface única. Funcionalidades incluem geração automática de relatórios, notificações de follow-up e dashboards para acompanhamento de performance da clínica. Backend em Java com Spring Boot garante segurança e escalabilidade, enquanto frontend em React proporciona interfaces intuitivas e responsivas.",
+      image: "/images/amavi-dashboard.gif",
+      tags: ["React", "Java", "Spring Boot", "MySQL", "REST API"],
+      technologies: [
+        { name: "React", description: "Frontend interativo e responsivo" },
+        { name: "Java", description: "Backend robusto e seguro" },
+        { name: "Spring Boot", description: "Framework para APIs REST e microserviços" },
+        { name: "MySQL", description: "Banco de dados relacional" },
+        { name: "REST API", description: "Comunicação entre frontend e backend" },
+      ],
+      year: "2026",
+      link: "#",
+      github: "#",
+    },
   ],
 
-  year: "2025",
-  link: "https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2025-1-ti2-3687100-brecho-re-use",
-  github: "https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2025-1-ti2-3687100-brecho-re-use"
-},
-
-        {
-         id: "PJ-002",
-title: "Japan Motors ",
-subtitle: "Sistema de Gerenciamento de Oficina",
-description:
-"Sistema web desenvolvido para otimizar a gestão de clientes, veículos e ordens de serviço da oficina Japan Motors.",
-detailedDescription:
-"Japan Motors System é uma aplicação web desenvolvida para melhorar a organização e o controle das atividades da oficina. A plataforma permite o cadastro de clientes e veículos, criação e acompanhamento de ordens de serviço, além do armazenamento do histórico de manutenções realizadas. Utilizando Java com Spring Boot no back-end e integração com banco de dados, o sistema centraliza as informações da oficina e facilita a gestão dos processos internos, tornando o atendimento mais ágil e eficiente.",
-image: "/images/japan-motors.gif",
-tags: ["Java", "Spring Boot", "MySQL", "Sistema Web"],
-technologies: [
-{ name: "Java", description: "Linguagem principal utilizada no desenvolvimento" },
-{ name: "Spring Boot", description: "Framework utilizado para criação da API e regras de negócio" },
-{ name: "MySQL", description: "Banco de dados relacional para armazenamento das informações" },
-{ name: "HTML", description: "Estrutura da interface do sistema" },
-{ name: "CSS", description: "Estilização das páginas" },
-{ name: "JavaScript", description: "Interatividade no front-end" }
-],
-year: "2025",
-link: "https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2025-2-ti3-9545100-Oficina-Mecanica",
-github: "https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2025-2-ti3-9545100-Oficina-Mecanica"
-},
-        {
-          id: "PJ-003",
-          title: "Pulse AI",
-          subtitle: "Assistente de Saúde Inteligente",
-          description:
-            "Aplicativo móvel que monitora sinais vitais via wearables e fornece insights personalizados com IA.",
-          detailedDescription:
-            "Pulse AI integra dados de wearables como Apple Watch e Garmin para oferecer uma visão holística da saúde do usuário. O sistema de IA analisa padrões de sono, frequência cardíaca e atividade física para gerar recomendações personalizadas, alertas de anomalias e relatórios semanais compartilháveis com médicos.",
-          image: "/images/giphy.gif",
-          tags: ["React Native", "Python", "TensorFlow", "FastAPI"],
-          technologies: [
-            { name: "React Native", description: "App mobile cross-platform" },
-            { name: "Python", description: "Backend e modelos de IA" },
-            { name: "TensorFlow", description: "Machine learning" },
-            { name: "FastAPI", description: "API REST de alta performance" },
-            { name: "HealthKit", description: "Integração com wearables" },
-          ],
-          year: "2025",
-          link: "#",
-          github: "#",
-        },
-        {
-          id: "PJ-004",
-          title: "Link Space",
-          subtitle: "Hub de Redes Sociais",
-          description:
-            "Agregador de perfis e redes sociais com analytics detalhados e personalização avançada de página.",
-          detailedDescription:
-            "Link Space é um hub centralizado que permite criar uma página única com todos os links e redes sociais do usuário. Conta com editor drag-and-drop para personalização completa, integração com APIs das principais redes sociais para exibir métricas em tempo real, temas visuais customizáveis e suporte a domínio próprio.",
-          image: "/images/giphy.gif",
-          tags: ["Next.js", "Supabase", "Tailwind CSS", "Vercel"],
-          technologies: [
-            { name: "Next.js", description: "Framework full stack" },
-            { name: "Supabase", description: "Backend as a Service" },
-            { name: "Tailwind CSS", description: "Design system utilitário" },
-            { name: "Vercel", description: "Deploy e edge functions" },
-          ],
-          year: "2024",
-          link: "#",
-          github: "#",
-        },
+  en: [
+    {
+      id: "PJ-001",
+      title: "Re.use",
+      subtitle: "Online Thrift Shop Platform",
+      description:
+        "A web application for buying and selling second-hand clothes, promoting sustainable consumption and reuse of items.",
+      detailedDescription:
+        "Re.use is an online thrift shop platform developed in 2025 to connect people interested in buying and selling second-hand clothes. The application allows item registration, browsing available products, and management of platform information. The system was built using Spring Boot for the backend, MySQL for data persistence, and HTML/CSS for the interface. The project was featured at the We Make Software 2025 event for its sustainability focus and use of technology to encourage circular economy.",
+      image: "/images/reuse.gif",
+      tags: ["Spring Boot", "MySQL", "HTML", "CSS"],
+      technologies: [
+        { name: "Spring Boot", description: "Java framework used for backend and system logic" },
+        { name: "MySQL", description: "Relational database for storing users and items" },
+        { name: "HTML", description: "Web page structure" },
+        { name: "CSS", description: "Styling and layout of the interface" }
       ],
-      en: [
-        {
-          id: "PJ-001",
-          title: "Dev Flow",
-          subtitle: "Project Management Platform",
-          description:
-            "A full stack application for managing development projects. Includes kanban board, sprint tracking, GitHub integration and real-time analytics dashboard.",
-          detailedDescription:
-            "Dev Flow is a complete project management platform built for agile development teams. It offers an interactive drag-and-drop kanban board, sprint tracking system with burndown charts, native GitHub integration to sync pull requests and issues, and a real-time analytics dashboard with team velocity metrics and delivery progress.",
-          image: "/images/giphy.gif",
-          tags: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
-          technologies: [
-            { name: "Next.js", description: "React framework for SSR and SSG" },
-            { name: "TypeScript", description: "Static typing" },
-            { name: "Prisma", description: "Database ORM" },
-            { name: "PostgreSQL", description: "Relational database" },
-            { name: "Tailwind CSS", description: "Utility-first styling" },
-            { name: "Framer Motion", description: "Smooth animations" },
-          ],
-          year: "2025",
-          link: "#",
-          github: "#",
-        },
-        {
-          id: "PJ-002",
-          title: "Art Vault",
-          subtitle: "Digital Art Gallery",
-          description:
-            "Platform for artists to showcase and sell their digital artworks with NFT support and traditional payments.",
-          detailedDescription:
-            "Art Vault is a digital art marketplace connecting independent artists with collectors worldwide. Features an immersive gallery with fullscreen viewing, real-time auction system, support for multiple currencies including crypto, and an analytics panel for artists to track their artwork performance.",
-          image: "/images/giphy.gif",
-          tags: ["React", "Node.js", "MongoDB", "Web3"],
-          technologies: [
-            { name: "React", description: "UI library" },
-            { name: "Node.js", description: "Server-side JavaScript runtime" },
-            { name: "MongoDB", description: "NoSQL database" },
-            { name: "Web3.js", description: "Blockchain integration" },
-            { name: "Stripe", description: "Payment processing" },
-          ],
-          year: "2025",
-          link: "#",
-          github: "#",
-        },
-        {
-          id: "PJ-003",
-          title: "Pulse AI",
-          subtitle: "Intelligent Health Assistant",
-          description:
-            "Mobile app that monitors vital signs via wearables and provides personalized AI-powered insights.",
-          detailedDescription:
-            "Pulse AI integrates data from wearables like Apple Watch and Garmin to offer a holistic view of user health. The AI system analyzes sleep patterns, heart rate and physical activity to generate personalized recommendations, anomaly alerts and weekly reports shareable with doctors.",
-          image: "/images/giphy.gif",
-          tags: ["React Native", "Python", "TensorFlow", "FastAPI"],
-          technologies: [
-            { name: "React Native", description: "Cross-platform mobile app" },
-            { name: "Python", description: "Backend and AI models" },
-            { name: "TensorFlow", description: "Machine learning" },
-            { name: "FastAPI", description: "High-performance REST API" },
-            { name: "HealthKit", description: "Wearables integration" },
-          ],
-          year: "2025",
-          link: "#",
-          github: "#",
-        },
-        {
-          id: "PJ-004",
-          title: "Link Space",
-          subtitle: "Social Media Hub",
-          description:
-            "Social profile aggregator with detailed analytics and advanced page customization.",
-          detailedDescription:
-            "Link Space is a centralized hub for creating a single page with all your links and social networks. Features a drag-and-drop editor for full customization, integration with major social network APIs to display real-time metrics, customizable visual themes and custom domain support.",
-          image: "/images/giphy.gif",
-          tags: ["Next.js", "Supabase", "Tailwind CSS", "Vercel"],
-          technologies: [
-            { name: "Next.js", description: "Full stack framework" },
-            { name: "Supabase", description: "Backend as a Service" },
-            { name: "Tailwind CSS", description: "Utility design system" },
-            { name: "Vercel", description: "Deploy and edge functions" },
-          ],
-          year: "2024",
-          link: "#",
-          github: "#",
-        },
-      ],
+      year: "2025",
+      link: "https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2025-1-ti2-3687100-brecho-re-use",
+      github: "https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2025-1-ti2-3687100-brecho-re-use"
     },
-  },
-
+    {
+      id: "PJ-002",
+      title: "Japan Motors",
+      subtitle: "Auto Shop Management System",
+      description:
+        "Web system developed to optimize management of clients, vehicles and service orders at Japan Motors auto shop.",
+      detailedDescription:
+        "Japan Motors System is a web application designed to improve organization and control of auto shop activities. The platform allows registration of clients and vehicles, creation and tracking of service orders, and storage of maintenance history. Built with Java and Spring Boot on the backend and integrated with a database, the system centralizes information and streamlines internal processes, improving service efficiency.",
+      image: "/images/japan-motors.gif",
+      tags: ["Java", "Spring Boot", "MySQL", "Web System"],
+      technologies: [
+        { name: "Java", description: "Main language used in development" },
+        { name: "Spring Boot", description: "Framework for API creation and business logic" },
+        { name: "MySQL", description: "Relational database for information storage" },
+        { name: "HTML", description: "System interface structure" },
+        { name: "CSS", description: "Page styling" },
+        { name: "JavaScript", description: "Frontend interactivity" }
+      ],
+      year: "2025",
+      link: "https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2025-2-ti3-9545100-Oficina-Mecanica",
+      github: "https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2025-2-ti3-9545100-Oficina-Mecanica"
+    },
+    {
+      id: "PJ-003",
+      title: "Amavi",
+      subtitle: "Patient Management and Process System",
+      description:
+        "Web platform that manages patients, appointments, and internal processes with interactive dashboards and task automation.",
+      detailedDescription:
+        "The Amavi system integrates patient registration, appointment scheduling, and medical history in a single interface. Features include automatic report generation, follow-up notifications, and dashboards to monitor clinic performance. Backend in Java with Spring Boot ensures security and scalability, while frontend in React provides intuitive and responsive interfaces.",
+      image: "/images/amavi-dashboard.gif",
+      tags: ["React", "Java", "Spring Boot", "MySQL", "REST API"],
+      technologies: [
+        { name: "React", description: "Interactive and responsive frontend" },
+        { name: "Java", description: "Robust and secure backend" },
+        { name: "Spring Boot", description: "Framework for REST APIs and microservices" },
+        { name: "MySQL", description: "Relational database" },
+        { name: "REST API", description: "Communication between frontend and backend" },
+      ],
+      year: "2026",
+      link: "#",
+      github: "#",
+    },
+  ],
+}},
 
 skills: {
   titleLine1: {
