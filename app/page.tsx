@@ -4,6 +4,8 @@ import { AboutSection } from "@/components/newspaper/about-section"
 import { SkillsSection } from "@/components/newspaper/skills-section"
 import { ProjectsSection } from "@/components/newspaper/projects-section"
 import { ExperienceSection } from "@/components/newspaper/experience-section"
+import { BooksSection } from "@/components/newspaper/books-section"
+import { ArticlesSection } from "@/components/newspaper/articles-section"
 import { ContactSection } from "@/components/newspaper/contact-section"
 import { DownloadSection } from "@/components/newspaper/download-section"
 import { Footer } from "@/components/newspaper/footer"
@@ -18,6 +20,8 @@ export default function Home() {
       <SkillsSection />
       <ProjectsSection />
       <ExperienceSection />
+      <BooksSection />
+      <ArticlesSection />
       <ContactSection />
       <DownloadSection />
       <Footer />

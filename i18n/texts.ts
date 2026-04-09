@@ -570,4 +570,73 @@ skills: {
     "Firebase", "Vercel", "AWS", "Redis","spring-boot","Postman","Java","c",""
   ],
 },
+
+books: {
+  titleLine1: {
+    pt: ".Biblio",
+    en: ".Biblio",
+  },
+  titleLine2: {
+    pt: "teca",
+    en: "theque",
+  },
+  currentlyReading: {
+    pt: "Lendo Atualmente",
+    en: "Currently Reading",
+  },
+  alreadyRead: {
+    pt: "Já Lidos",
+    en: "Already Read",
+  },
+  viewMore: {
+    pt: "Ver Resenha",
+    en: "Read Review",
+  },
+ list: {
+    pt: [
+      {
+        id: "BK-001", // ID Único
+        title: "O Programador Pragmático",
+        author: "Andrew Hunt & David Thomas",
+        status: "read",
+        bgColor: "bg-stone-800",
+        textColor: "text-stone-100",
+        year: "2024",
+        image: "/assets/books/pragmatic-programmer.jpg", // Caminho correto
+      },
+      {
+        id: "BK-002", // ID Único
+        title: "Leitura aramuni",
+        author: "Autor Exemplo",
+        status: "reading",
+        bgColor: "bg-stone-800",
+        textColor: "text-stone-100",
+        year: "2024",
+        image: "/images/atletico.jpg", // Caminho corrigido (sem o /assets/ na frente)
+      },
+    ],
+    en: [
+      {
+        id: "BK-001",
+        title: "The Pragmatic Programmer",
+        author: "Andrew Hunt & David Thomas",
+        status: "read",
+        bgColor: "bg-stone-800",
+        textColor: "text-stone-100",
+        year: "2024",
+        image: "public/assets/books/pragmatic-programmer.jpg",
+      },
+      {
+        id: "BK-002",
+        title: "Currently aramuni",
+        author: "Example Author",
+        status: "reading",
+        bgColor: "bg-stone-800",
+        textColor: "text-stone-100",
+        year: "2024",
+        image: "/images/atletico.jpg",
+      },
+    ],
+  },
+},
 }

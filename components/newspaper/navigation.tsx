@@ -76,6 +76,8 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X, Download } from "lucide-react"
 import { useLanguage } from "@/context/LanguageContext"
+import { Magnetic } from "@/components/newspaper/magnetic"
+import { useUISound } from "@/hooks/use-ui-sound"
 
 /* ================================
    TEXTOS DO MENU (PT / EN)
@@ -86,6 +88,7 @@ const navItems = {
     { label: "Habilidades", href: "#habilidades" },
     { label: "Projetos", href: "#projetos" },
     { label: "Experiência", href: "#experiencia" },
+    { label: "Livros", href: "#livros" },
     { label: "Contato", href: "#contato" },
   ],
   en: [
@@ -93,6 +96,7 @@ const navItems = {
     { label: "Skills", href: "#habilidades" },
     { label: "Projects", href: "#projetos" },
     { label: "Experience", href: "#experiencia" },
+    { label: "Books", href: "#livros" },
     { label: "Contact", href: "#contato" },
   ],
 }
@@ -103,6 +107,7 @@ export function Navigation() {
 
   // 🔥 Agora usando Context GLOBAL
   const { lang, toggleLang } = useLanguage()
+  const { playHover, playClick } = useUISound()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
@@ -140,46 +145,56 @@ export function Navigation() {
           {/* LINKS */}
           <div className="flex items-center gap-8">
             {navItems[lang].map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="group relative font-mono text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <span className="relative z-10">{item.label}</span>
+              <Magnetic key={item.href}>
+                <a
+                  href={item.href}
+                  onMouseEnter={playHover}
+                  onClick={playClick}
+                  className="group relative font-mono text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors block"
+                >
+                  <span className="relative z-10">{item.label}</span>
 
-                <motion.span
-                  className="absolute left-0 bottom-[-4px] h-[2px] bg-primary origin-left"
-                  initial={{ scaleX: 0 }}
-                  whileHover={{ scaleX: 1 }}
-                  transition={{ duration: 0.25 }}
-                  style={{ width: "100%" }}
-                />
-              </a>
+                  <motion.span
+                    className="absolute left-0 bottom-[-4px] h-[2px] bg-primary origin-left"
+                    initial={{ scaleX: 0 }}
+                    whileHover={{ scaleX: 1 }}
+                    transition={{ duration: 0.25 }}
+                    style={{ width: "100%" }}
+                  />
+                </a>
+              </Magnetic>
             ))}
           </div>
 
           {/* BOTÃO IDIOMA */}
-          <button
-            onClick={toggleLang}
-            className="relative px-4 py-2 font-mono text-[10px] uppercase tracking-widest
-                       border border-border text-muted-foreground
-                       hover:text-primary hover:border-primary
-                       transition-all duration-300"
-          >
-            {lang === "pt" ? "EN" : "PT"}
-          </button>
+          <Magnetic>
+            <button
+              onClick={() => { playClick(); toggleLang(); }}
+              onMouseEnter={playHover}
+              className="relative px-4 py-2 font-mono text-[10px] uppercase tracking-widest
+                         border border-border text-muted-foreground
+                         hover:text-primary hover:border-primary
+                         transition-all duration-300"
+            >
+              {lang === "pt" ? "EN" : "PT"}
+            </button>
+          </Magnetic>
 
           {/* BOTÃO CV */}
-          <a
-            href="#download"
-            className="group relative flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 font-mono text-xs uppercase tracking-widest overflow-hidden transition-transform duration-200 hover:scale-105 active:scale-95"
-          >
-            <span className="absolute inset-0 bg-foreground translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-            <Download size={14} className="relative z-10" />
-            <span className="relative z-10">
-              {lang === "pt" ? "Baixar CV" : "Download CV"}
-            </span>
-          </a>
+          <Magnetic>
+            <a
+              href="#download"
+              onMouseEnter={playHover}
+              onClick={playClick}
+              className="group relative flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 font-mono text-xs uppercase tracking-widest overflow-hidden transition-transform duration-200 hover:scale-105 active:scale-95"
+            >
+              <span className="absolute inset-0 bg-foreground translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+              <Download size={14} className="relative z-10" />
+              <span className="relative z-10">
+                {lang === "pt" ? "Baixar CV" : "Download CV"}
+              </span>
+            </a>
+          </Magnetic>
         </div>
 
         {/* BOTÃO MOBILE */}
@@ -208,7 +223,7 @@ export function Navigation() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => { playClick(); setIsOpen(false); }}
                   className="font-mono text-sm uppercase tracking-widest text-muted-foreground hover:text-primary"
                 >
                   {item.label}
