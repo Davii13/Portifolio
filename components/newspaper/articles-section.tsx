@@ -10,35 +10,78 @@ const articlesList = {
   pt: [
     {
       id: "ART-01",
-      title: "Clean Architecture em Projetos Reais",
-      date: "09 Abril, 2026",
-      excerpt: "Como aplicar os conceitos do Uncle Bob sem transformar o seu sistema em um monstro de complexidade acidental...",
+      title: "Microservices e Arquitetura Distribuída",
+      date: "Abril, 2026",
+      excerpt: "Estudo dos conceitos de microsserviços com base em Martin Fowler e Engenharia de Software Moderna, abordando desacoplamento, escalabilidade e desafios reais.",
       category: "Arquitetura",
     },
     {
       id: "ART-02",
-      title: "Desmistificando o Event Loop",
-      date: "25 Março, 2026",
-      excerpt: "Um mergulho profundo no funcionamento interno do Node.js e como ele lida com milhares de requisições de forma assíncrona.",
-      category: "Node.js",
-    }
+      title: "Padrões de Projeto na Prática: Facade",
+      date: "Março, 2026",
+      excerpt: "Aplicação do padrão Facade para simplificar sistemas complexos, com base nos conceitos do Refactoring Guru e uso em projetos reais.",
+      category: "Design Patterns",
+    },
+    {
+      id: "ART-03",
+      title: "Modularização e Big Ball of Mud",
+      date: "Março, 2026",
+      excerpt: "Análise dos problemas de sistemas mal estruturados e como critérios de modularização ajudam a evitar arquiteturas caóticas.",
+      category: "Arquitetura",
+    },
+    {
+      id: "ART-04",
+      title: "Impacto do Uso de Tecnologia na Saúde Mental",
+      date: "Novembro, 2025",
+      excerpt: "Revisão de estudos científicos sobre os efeitos do uso excessivo de telas, incluindo ansiedade, sono e bem-estar emocional.",
+      category: "Pesquisa",
+    },
+    {
+      id: "ART-05",
+      title: "BitTorrent e Estratégias de Caching",
+      date: "2025",
+      excerpt: "Estudo sobre o funcionamento do BitTorrent sob a perspectiva de caching e distribuição eficiente de dados em larga escala.",
+      category: "Sistemas Distribuídos",
+    },
   ],
+
   en: [
     {
       id: "ART-01",
-      title: "Clean Architecture in Real Projects",
-      date: "April 09, 2026",
-      excerpt: "How to apply Uncle Bob's concepts without turning your system into an accidental complexity monster...",
+      title: "Microservices and Distributed Architecture",
+      date: "April, 2026",
+      excerpt: "Study of microservices concepts based on Martin Fowler and Modern Software Engineering, focusing on scalability and decoupling.",
       category: "Architecture",
     },
     {
       id: "ART-02",
-      title: "Demystifying the Event Loop",
-      date: "March 25, 2026",
-      excerpt: "A deep dive into the inner workings of Node.js and how it handles thousands of asynchronous requests.",
-      category: "Node.js",
-    }
-  ]
+      title: "Design Patterns in Practice: Facade",
+      date: "March, 2026",
+      excerpt: "Applying the Facade pattern to simplify complex systems based on Refactoring Guru concepts.",
+      category: "Design Patterns",
+    },
+    {
+      id: "ART-03",
+      title: "Modularization and Big Ball of Mud",
+      date: "March, 2026",
+      excerpt: "Analysis of poorly structured systems and how modularization criteria help avoid chaotic architectures.",
+      category: "Architecture",
+    },
+    {
+      id: "ART-04",
+      title: "Technology Usage and Mental Health Impact",
+      date: "November, 2025",
+      excerpt: "Review of scientific studies on screen time and its effects on anxiety, sleep, and emotional well-being.",
+      category: "Research",
+    },
+    {
+      id: "ART-05",
+      title: "BitTorrent from a Caching Perspective",
+      date: "2025",
+      excerpt: "Study of BitTorrent focusing on caching strategies and efficient large-scale data distribution.",
+      category: "Distributed Systems",
+    },
+  ],
 }
 
 export function ArticlesSection() {
