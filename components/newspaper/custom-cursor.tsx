@@ -227,90 +227,23 @@ export function CustomCursor() {
         style={{ x: ringX, y: ringY }}
       >
         <motion.div
-          className="flex items-center justify-center -translate-x-1/2 -translate-y-1/2"
+          className="flex items-center justify-center -translate-x-1/2 -translate-y-1/2 rounded-full border border-foreground/50 transition-colors"
           animate={{
             width: isHovering ? 56 : isClicking ? 20 : 36,
             height: isHovering ? 56 : isClicking ? 20 : 36,
-            rotate: isHovering ? 45 : 0,
+            scale: isHovering ? 1.2 : 1,
+            backgroundColor: isHovering ? "var(--color-primary-transparent, rgba(200,16,46,0.1))" : "transparent"
           }}
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
-          {/* Crosshair lines */}
-          <motion.div
-            className="absolute bg-[#f5f0e8]"
-            animate={{
-              width: isHovering ? 56 : 36,
-              height: 1,
-              opacity: isClicking ? 0.4 : 0.8,
-            }}
-          />
-          <motion.div
-            className="absolute bg-[#f5f0e8]"
-            animate={{
-              width: 1,
-              height: isHovering ? 56 : 36,
-              opacity: isClicking ? 0.4 : 0.8,
-            }}
-          />
-
-          {/* Corner brackets */}
-          {!isClicking && (
-            <>
-              {/* Top-left */}
-              <motion.div
-                className="absolute"
-                animate={{
-                  top: isHovering ? -2 : 0,
-                  left: isHovering ? -2 : 0,
-                }}
-              >
-                <div className="w-2 h-[1px] bg-[#f5f0e8]" />
-                <div className="w-[1px] h-2 bg-[#f5f0e8]" />
-              </motion.div>
-              {/* Top-right */}
-              <motion.div
-                className="absolute"
-                animate={{
-                  top: isHovering ? -2 : 0,
-                  right: isHovering ? -2 : 0,
-                }}
-              >
-                <div className="w-2 h-[1px] bg-[#f5f0e8] ml-auto" />
-                <div className="w-[1px] h-2 bg-[#f5f0e8] ml-auto" />
-              </motion.div>
-              {/* Bottom-left */}
-              <motion.div
-                className="absolute flex flex-col justify-end"
-                animate={{
-                  bottom: isHovering ? -2 : 0,
-                  left: isHovering ? -2 : 0,
-                }}
-              >
-                <div className="w-[1px] h-2 bg-[#f5f0e8]" />
-                <div className="w-2 h-[1px] bg-[#f5f0e8]" />
-              </motion.div>
-              {/* Bottom-right */}
-              <motion.div
-                className="absolute flex flex-col justify-end items-end"
-                animate={{
-                  bottom: isHovering ? -2 : 0,
-                  right: isHovering ? -2 : 0,
-                }}
-              >
-                <div className="w-[1px] h-2 bg-[#f5f0e8] ml-auto" />
-                <div className="w-2 h-[1px] bg-[#f5f0e8]" />
-              </motion.div>
-            </>
-          )}
-
-          {/* Cursor text label */}
+          {/* O texto do cursor no hover */}
           <AnimatePresence>
             {cursorText && (
               <motion.span
                 initial={{ opacity: 0, y: 4 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -4 }}
-                className="absolute -bottom-6 font-mono text-[7px] uppercase tracking-[0.2em] text-[#f5f0e8] whitespace-nowrap"
+                className="absolute -bottom-6 font-mono text-[7px] uppercase tracking-[0.2em] text-foreground whitespace-nowrap"
               >
                 {cursorText}
               </motion.span>
@@ -325,16 +258,16 @@ export function CustomCursor() {
         style={{ x: cursorX, y: cursorY }}
       >
         <motion.div
-          className="-translate-x-1/2 -translate-y-1/2"
+          className="-translate-x-1/2 -translate-y-1/2 rounded-full transition-colors"
           animate={{
-            width: isHovering ? 6 : isClicking ? 10 : 4,
-            height: isHovering ? 6 : isClicking ? 10 : 4,
-            backgroundColor: isHovering ? "#c8102e" : "#f5f0e8",
+            width: isHovering ? 6 : isClicking ? 10 : 6,
+            height: isHovering ? 6 : isClicking ? 10 : 6,
+            backgroundColor: isHovering ? "#c8102e" : "var(--color-foreground, currentColor)",
           }}
           transition={{ type: "spring", stiffness: 500, damping: 20 }}
-          style={{ mixBlendMode: "difference" }}
         />
       </motion.div>
     </>
   )
 }
+
