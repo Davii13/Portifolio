@@ -84,6 +84,25 @@ function ProjectCard({
       style={{ rotateX, rotateY, transformPerspective: 900 }}
       className="group relative border border-card-foreground/10 bg-card overflow-hidden cursor-pointer"
     >
+      {/* Distortion Image Background */}
+      <motion.div
+        className="absolute inset-0 pointer-events-none z-0"
+        initial={{ opacity: 0, scale: 1 }}
+        animate={{ 
+          opacity: isHovered ? 1 : 0,
+          scale: isHovered ? 1.05 : 1,
+          filter: isHovered ? "url(#liquidHover) grayscale(30%)" : "url(#liquidNormal) grayscale(100%)"
+        }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <img 
+          src={project.image} 
+          alt="" 
+          className="w-full h-full object-cover opacity-30"
+        />
+        <div className="absolute inset-0 bg-card/60 backdrop-blur-[2px]" />
+      </motion.div>
+
       {/* Header */}
       <div className="flex items-center justify-between bg-card-foreground px-6 py-3 relative overflow-hidden">
         <span className="font-mono text-xs uppercase tracking-widest text-card relative z-10">
@@ -101,7 +120,7 @@ function ProjectCard({
         />
       </div>
 
-      <div className="p-6 md:p-8">
+      <div className="p-6 md:p-8 relative z-10">
         <h3 className="font-serif text-3xl md:text-4xl font-black text-card-foreground uppercase leading-none mb-2 relative">
           <span className="relative z-10">{glitchTitle}</span>
           {isHovered && (

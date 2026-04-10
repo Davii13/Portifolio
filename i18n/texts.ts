@@ -589,6 +589,16 @@ skills: {
       en: "View Profile",
     },
   },
+  themeToggle: {
+    light: {
+      pt: "Matutina",
+      en: "Morning",
+    },
+    dark: {
+      pt: "Noturna",
+      en: "Night",
+    },
+  },
   marquee: {
     messages: {
       pt: ["Buscando novas oportunidades", "Desenvolvedor Full Stack / Next.js", "Trabalho em Home Office", "Foco em Clean Code & Boas Práticas"],

@@ -4,6 +4,8 @@ import { Analytics } from '@vercel/analytics/next'
 import { LanguageProvider } from '@/context/LanguageContext'
 import { Preloader } from '@/components/newspaper/preloader'
 import { ReadingProgress } from '@/components/newspaper/reading-progress'
+import { GlitchEffectSVG } from '@/components/newspaper/glitch-effect-svg'
+import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
@@ -25,14 +27,17 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${playfair.variable} ${jetbrains.variable} font-sans antialiased`}
       >
-        <Preloader />
-        <ReadingProgress />
-        {/* 🌍 PROVIDER GLOBAL DE IDIOMA */}
-        <LanguageProvider>
-          {children}
-        </LanguageProvider>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Preloader />
+          <ReadingProgress />
+          <GlitchEffectSVG />
+          {/* 🌍 PROVIDER GLOBAL DE IDIOMA */}
+          <LanguageProvider>
+            {children}
+          </LanguageProvider>
 
-        <Analytics />
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   )

@@ -78,6 +78,7 @@ import { Menu, X, Download } from "lucide-react"
 import { useLanguage } from "@/context/LanguageContext"
 import { Magnetic } from "@/components/newspaper/magnetic"
 import { useUISound } from "@/hooks/use-ui-sound"
+import { ThemeToggle } from "@/components/newspaper/theme-toggle"
 
 /* ================================
    TEXTOS DO MENU (PT / EN)
@@ -165,6 +166,8 @@ export function Navigation() {
               </Magnetic>
             ))}
           </div>
+
+          <ThemeToggle />
 
           {/* BOTÃO IDIOMA */}
           <Magnetic>
