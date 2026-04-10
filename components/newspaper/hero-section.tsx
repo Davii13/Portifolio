@@ -89,6 +89,7 @@ import { motion, useMotionValue, useTransform, useSpring } from "framer-motion"
 import { useRef, useEffect, useState } from "react"
 import { useLanguage } from "@/context/LanguageContext"
 import { texts } from "@/i18n/texts"
+import { Hero3D } from "@/components/newspaper/hero-3d"
 
 export function HeroSection() {
   const { lang } = useLanguage()
@@ -151,7 +152,8 @@ export function HeroSection() {
       onMouseMove={handleMouseMove}
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background"
     >
-      <div className="relative mx-auto max-w-7xl px-6 py-32 w-full">
+      <Hero3D />
+      <div className="relative mx-auto max-w-7xl px-6 py-32 w-full z-10 pointer-events-none *:pointer-events-auto">
         <motion.div
           className="flex flex-col gap-8"
           style={{ rotateX, rotateY, transformPerspective: 1200 }}

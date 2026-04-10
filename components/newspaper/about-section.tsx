@@ -87,7 +87,7 @@ export function AboutSection() {
                     alt="Davi Nunes"
                     width={320}
                     height={400}
-                    className="w-full h-auto object-cover grayscale contrast-125"
+                    className={`w-full h-auto object-cover contrast-125 transition-all duration-500 ${imgHovered ? "grayscale-0" : "grayscale"}`}
                   />
                 </motion.div>
 

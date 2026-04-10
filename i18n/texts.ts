@@ -571,6 +571,30 @@ skills: {
   ],
 },
 
+  github: {
+    titleLine1: {
+      pt: ".Ativi",
+      en: ".Acti",
+    },
+    titleLine2: {
+      pt: "dade",
+      en: "vity",
+    },
+    githubLabel: {
+      pt: "Atividades Recentes do Github",
+      en: "Recent Github Activities",
+    },
+    viewProfile: {
+      pt: "Ver Perfil",
+      en: "View Profile",
+    },
+  },
+  marquee: {
+    messages: {
+      pt: ["Buscando novas oportunidades", "Desenvolvedor Full Stack / Next.js", "Trabalho em Home Office", "Foco em Clean Code & Boas Práticas"],
+      en: ["Open to new opportunities", "Full Stack Developer / Next.js", "Remote Work available", "Focused on Clean Code & Best Practices"],
+    }
+  },
 books: {
   titleLine1: {
     pt: ".Biblio",
