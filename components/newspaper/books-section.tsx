@@ -12,7 +12,7 @@ const localBooks = {
       id: "BK-001",
       title: "O Programador Pragmático",
       author: "Andrew Hunt & David Thomas",
-      status: "reading",
+      status: "read",
       bgColor: "#1c1917",
       year: "2024",
       image: "/assets/books/pragmatic-programmer.jpg",
@@ -51,7 +51,34 @@ const localBooks = {
       status: "read",
       bgColor: "#020617",
       year: "2023",
-        image: "/assets/books/so.webp",
+      image: "/assets/books/so.webp",
+    },
+    {
+      id: "BK-006",
+      title: "Pense em Python",
+      author: "Allen B. Downey",
+      status: "read",
+      bgColor: "#1a2e05",
+      year: "2025",
+      image: "/assets/books/pense-python.png",
+    },
+    {
+      id: "BK-007",
+      title: "Python Fluente",
+      author: "Luciano Ramalho",
+      status: "read",
+      bgColor: "#172554",
+      year: "2025",
+      image: "/assets/books/python-fluente.png",
+    },
+    {
+      id: "BK-008",
+      title: "Arquitetura Limpa",
+      author: "Robert C. Martin",
+      status: "reading",
+      bgColor: "#1c1917",
+      year: "2026",
+      image: "/assets/books/arquitetura-limpa.png",
     },
   ],
 
@@ -60,7 +87,7 @@ const localBooks = {
       id: "BK-001",
       title: "The Pragmatic Programmer",
       author: "Andrew Hunt & David Thomas",
-      status: "reading",
+      status: "read",
       bgColor: "#1c1917",
       year: "2024",
       image: "/assets/books/pragmatic-programmer.jpg",
@@ -72,7 +99,7 @@ const localBooks = {
       status: "read",
       bgColor: "#0f172a",
       year: "2023",
-      image: "/assets/books/pragmatic-programmer.jpg",
+      image: "/assets/books/engSoftwaremoderna.webp",
     },
     {
       id: "BK-003",
@@ -81,7 +108,7 @@ const localBooks = {
       status: "read",
       bgColor: "#1e293b",
       year: "2023",
-      image: "/assets/books/pragmatic-programmer.jpg",
+      image: "/assets/books/sommervile.jpg",
     },
     {
       id: "BK-004",
@@ -90,7 +117,7 @@ const localBooks = {
       status: "read",
       bgColor: "#111827",
       year: "2024",
-      image: "/assets/books/pragmatic-programmer.jpg",
+      image: "/assets/books/scrumft.webp",
     },
     {
       id: "BK-005",
@@ -100,6 +127,33 @@ const localBooks = {
       bgColor: "#020617",
       year: "2023",
       image: "/assets/books/so.webp",
+    },
+    {
+      id: "BK-006",
+      title: "Think Python",
+      author: "Allen B. Downey",
+      status: "read",
+      bgColor: "#1a2e05",
+      year: "2025",
+      image: "/images/pense-em-python.jpg",
+    },
+    {
+      id: "BK-007",
+      title: "Fluent Python",
+      author: "Luciano Ramalho",
+      status: "read",
+      bgColor: "#172554",
+      year: "2025",
+      image: "/images/python-fluente.jpg",
+    },
+    {
+      id: "BK-008",
+      title: "Clean Architecture",
+      author: "Robert C. Martin",
+      status: "reading",
+      bgColor: "#1c1917",
+      year: "2026",
+      image: "/images/arquitetura-limpa.jpg",
     },
   ],
 }
@@ -114,7 +168,7 @@ function BookCard({ book, i, isInView, label }: { book: any; i: number; isInView
       className="flex flex-col items-center gap-4"
     >
       {/* Moldura do Livro - Simplificada ao máximo para evitar bugs de CSS */}
-      <div 
+      <div
         style={{
           position: 'relative',
           width: '180px',
@@ -128,9 +182,9 @@ function BookCard({ book, i, isInView, label }: { book: any; i: number; isInView
       >
         {/* Tag IMG pura - sem filtros que possam ocultá-la */}
         {book.image && !imgError && (
-          <img 
-            src={book.image} 
-            alt={book.title} 
+          <img
+            src={book.image}
+            alt={book.title}
             style={{
               position: 'absolute',
               inset: 0,
@@ -195,27 +249,29 @@ export function BooksSection() {
           {t.t1} <span className="text-primary">{t.t2}</span>
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <div>
+        {/* Lendo Atualmente - Destaque */}
+        {readingBooks.length > 0 && (
+          <div className="mb-16">
             <h3 className="font-mono text-xs uppercase tracking-widest text-muted-foreground border-b pb-4 mb-8">
               {t.reading}
             </h3>
-            <div className="flex flex-wrap gap-8">
+            <div className="flex flex-wrap gap-8 justify-center md:justify-start">
               {readingBooks.map((book, i) => (
                 <BookCard key={`reading-${book.id}`} book={book} i={i} isInView={isInView} label={t.reading} />
               ))}
             </div>
           </div>
+        )}
 
-          <div>
-            <h3 className="font-mono text-xs uppercase tracking-widest text-muted-foreground border-b pb-4 mb-8">
-              {t.read}
-            </h3>
-            <div className="flex flex-wrap gap-8">
-              {readBooks.map((book, i) => (
-                <BookCard key={`read-${book.id}`} book={book} i={i} isInView={isInView} label={t.read} />
-              ))}
-            </div>
+        {/* Já Lidos - Grid Responsivo */}
+        <div>
+          <h3 className="font-mono text-xs uppercase tracking-widest text-muted-foreground border-b pb-4 mb-8">
+            {t.read}
+          </h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
+            {readBooks.map((book, i) => (
+              <BookCard key={`read-${book.id}`} book={book} i={i} isInView={isInView} label={t.read} />
+            ))}
           </div>
         </div>
       </div>
