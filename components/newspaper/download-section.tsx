@@ -1,102 +1,3 @@
-/*
-  Este código define uma seção "Download de Currículo" animada,
-  com efeito de parallax baseado no movimento do mouse
-  e animações suaves usando Framer Motion.
-
-  ======================================================
-  🔹 Estrutura Geral
-  ======================================================
-  - "use client": executa no lado do cliente (Next.js App Router).
-  - useInView: dispara animações quando a seção entra na viewport.
-  - useMotionValue + useSpring + useTransform:
-      criam um efeito de movimento suave (parallax) no fundo.
-  - Ícones (Download, FileText) vêm do lucide-react.
-
-  A seção contém:
-    1) Texto de fundo gigante "CV" com movimento dinâmico
-    2) Título e descrição
-    3) Botões de download
-    4) Elemento decorativo inferior estilo editorial
-
-  ======================================================
-  🔹 Efeito Parallax no Background
-  ======================================================
-  - mouseX / mouseY:
-      capturam a posição relativa do mouse dentro da seção.
-
-  - smoothX / smoothY:
-      aplicam suavização com física (useSpring).
-
-  - bgX / bgY:
-      convertem o movimento do mouse em deslocamento
-      do texto de fundo (efeito parallax).
-
-  Resultado:
-    O texto gigante "CV" se move levemente
-    acompanhando o movimento do mouse,
-    criando profundidade visual.
-
-  ======================================================
-  🔹 Cabeçalho Animado
-  ======================================================
-  - Título ".Baixar Curriculo":
-      * Efeito skew ao hover.
-      * Aumento de espaçamento na segunda linha.
-  - Linha decorativa central abaixo do título.
-  - Entrada com fade + slide quando aparece na tela.
-
-  ======================================================
-  🔹 Texto Descritivo
-  ======================================================
-  - Explica que o usuário pode baixar o currículo em PDF.
-  - Animação de fade ao entrar na viewport.
-
-  ======================================================
-  🔹 Botões de Ação
-  ======================================================
-
-  1) Botão "Download CV - PDF"
-     - Escala e leve rotação ao hover.
-     - Animação de overlay subindo.
-     - Ícone com efeito bounce.
-     - whileTap reduz escala (feedback de clique).
-     - data-cursor-text ativa texto no cursor customizado.
-
-  2) Botão "Ver Online"
-     - Escala e rotação oposta ao primeiro botão.
-     - Overlay desliza horizontalmente.
-     - Texto muda de cor ao hover.
-     - Também integra com o cursor customizado.
-
-  ======================================================
-  🔹 Decoração Inferior (Estilo Jornal)
-  ======================================================
-  - Linhas horizontais decorativas.
-  - Informações adicionais:
-      * Última atualização
-      * Formato do arquivo
-  - Entrada com fade progressivo.
-
-  ======================================================
-  🎯 Objetivo Geral
-  ======================================================
-  Criar uma seção elegante e interativa para download
-  do currículo, com:
-
-    - Parallax suave
-    - Microinterações refinadas
-    - Estética editorial/minimalista
-    - Feedback visual claro em hover e clique
-
-  Tecnologias utilizadas:
-    - React
-    - Framer Motion
-    - Tailwind CSS
-    - Lucide React
-
-  O foco está na experiência visual premium
-  e sensação de profundidade com movimento sutil.
-*/
 "use client"
 
 import { motion, useInView, useMotionValue, useTransform, useSpring } from "framer-motion"
@@ -132,13 +33,13 @@ export function DownloadSection() {
       id="download"
       ref={sectionRef}
       onMouseMove={handleMouseMove}
-      className="relative bg-background py-24 md:py-32 overflow-hidden"
+      className="relative bg-background py-28 md:py-40 overflow-hidden"
     >
       <motion.div
         className="absolute inset-0 flex items-center justify-center pointer-events-none select-none"
         style={{ x: bgX, y: bgY }}
       >
-        <span className="font-serif text-[15rem] md:text-[25rem] font-black text-foreground/[0.03] uppercase leading-none">
+        <span className="font-serif text-[15rem] md:text-[25rem] font-bold text-foreground/[0.03] uppercase leading-none">
           CV
         </span>
       </motion.div>
@@ -151,24 +52,22 @@ export function DownloadSection() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-serif text-5xl md:text-7xl font-black text-foreground uppercase leading-none mb-4">
-              <motion.span>
-                {t.titleLine1[lang]}
-              </motion.span>
+            <h2 className="font-serif text-5xl md:text-7xl font-bold text-foreground uppercase leading-[0.85] tracking-[-0.02em] mb-4">
+              {t.titleLine1[lang]}
               <br />
-              <motion.span className="text-primary">
+              <span className="text-foreground/15">
                 {t.titleLine2[lang]}
-              </motion.span>
+              </span>
             </h2>
 
-            <div className="h-[3px] w-24 bg-primary mx-auto mb-8" />
+            <div className="h-px w-24 bg-primary mx-auto mb-8" />
           </motion.div>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-serif text-xl text-foreground/70 max-w-lg mb-12 leading-relaxed"
+            className="font-sans text-base text-muted-foreground max-w-lg mb-12 leading-relaxed"
           >
             {t.description[lang]}
           </motion.p>
@@ -182,18 +81,22 @@ export function DownloadSection() {
             <motion.a
               href="images/Currículo_Davi_NunesCarvalho.pdf"
               download
-              className="group relative flex items-center gap-4 bg-primary text-primary-foreground px-8 py-5 font-mono text-xs uppercase tracking-widest overflow-hidden"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="group relative flex items-center gap-4 bg-primary text-primary-foreground px-8 py-4 font-mono text-[10px] uppercase tracking-[0.15em] overflow-hidden hover:bg-primary/90 transition-colors"
             >
-              <Download size={18} />
+              <Download size={16} />
               <span>{t.downloadButton[lang]}</span>
             </motion.a>
 
             <motion.a
               href="/cv.pdf"
               target="_blank"
-              className="group relative flex items-center gap-4 border-2 border-foreground text-foreground px-8 py-5 font-mono text-xs uppercase tracking-widest overflow-hidden"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="group relative flex items-center gap-4 border border-foreground text-foreground px-8 py-4 font-mono text-[10px] uppercase tracking-[0.15em] overflow-hidden hover:bg-foreground hover:text-background transition-colors"
             >
-              <FileText size={18} />
+              <FileText size={16} />
               <span>{t.viewOnline[lang]}</span>
             </motion.a>
           </motion.div>
@@ -204,7 +107,7 @@ export function DownloadSection() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="mt-16 w-full max-w-2xl"
           >
-            <div className="flex justify-between mt-4 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+            <div className="flex justify-between mt-4 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
               <span>{t.lastUpdate[lang]}</span>
               <span>{t.format[lang]}</span>
             </div>

@@ -34,21 +34,18 @@ export function Preloader() {
           className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background"
         >
           {/* Logo */}
-          <div className="font-serif text-6xl md:text-8xl font-black text-foreground tracking-tight mb-4 flex">
-            <span>DV</span>
-            <motion.span 
-              className="text-primary"
-              animate={{ opacity: [1, 0, 1] }}
-              transition={{ duration: 0.8, repeat: Infinity }}
-            >
-              .
-            </motion.span>
+          <div className="flex flex-col items-center mb-8">
+            <span className="font-serif text-4xl md:text-6xl font-bold text-foreground tracking-tight uppercase">
+              DAVI NUNES
+            </span>
+            <span className="font-mono text-[10px] uppercase tracking-[0.4em] text-muted-foreground mt-2">
+              Software Engineer
+            </span>
           </div>
           
           <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground flex flex-col items-center gap-2">
-            <span>Printing Edition...</span>
             {/* Progress Bar */}
-            <div className="w-48 h-[2px] bg-border relative overflow-hidden mt-2">
+            <div className="w-48 h-[1px] bg-border relative overflow-hidden mt-2">
               <motion.div 
                 className="absolute top-0 left-0 bottom-0 bg-primary"
                 initial={{ width: "0%" }}
@@ -56,7 +53,7 @@ export function Preloader() {
                 transition={{ duration: 0.2 }}
               />
             </div>
-            <span className="mt-2 text-[10px]">{progress}%</span>
+            <span className="mt-2 text-[10px] text-muted-foreground">{progress}%</span>
           </div>
         </motion.div>
       )}

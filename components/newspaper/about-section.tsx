@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, useInView, useMotionValue, useTransform } from "framer-motion"
+import { motion, useMotionValue, useTransform, useScroll } from "framer-motion"
 import { useRef, useState } from "react"
 import Image from "next/image"
 import { useLanguage } from "@/context/LanguageContext"
@@ -42,102 +42,123 @@ export function AboutSection() {
   const { lang } = useLanguage()
   const t = texts[lang].about
 
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const sectionRef = useRef(null)
+  
+  // Apple-style scroll-linked animation para a seção inteira
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start 80%", "start 20%"]
+  })
+
+  // Transforma o progresso do scroll em valores de CSS
+  const sectionOpacity = useTransform(scrollYProgress, [0, 1], [0, 1])
+  const sectionY = useTransform(scrollYProgress, [0, 1], [100, 0])
+  const headerX = useTransform(scrollYProgress, [0, 1], [-50, 0])
+
   const [hoveredStat, setHoveredStat] = useState<number | null>(null)
   const [imgHovered, setImgHovered] = useState(false)
 
+  // Parallax setup for the image specifically
+  const imgContainerRef = useRef(null)
+  const { scrollYProgress: imgScroll } = useScroll({
+    target: imgContainerRef,
+    offset: ["start end", "end start"]
+  })
+  
+  // Parallax effect: moves image slightly up as user scrolls down
+  const imgYParallax = useTransform(imgScroll, [0, 1], [-40, 40])
+  const imgScaleScroll = useTransform(imgScroll, [0, 0.5], [0.8, 1])
+
   return (
-    <section id="sobre" className="relative bg-card py-24 md:py-32" ref={ref}>
-      <div className="mx-auto max-w-7xl px-6">
+    <section id="sobre" className="relative bg-card py-28 md:py-40 z-20" ref={sectionRef}>
+      <motion.div 
+        className="mx-auto max-w-7xl px-6"
+        style={{ opacity: sectionOpacity, y: sectionY }}
+      >
+        {/* Section label */}
         <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          animate={isInView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="mb-16"
+          style={{ x: headerX }}
+          className="mb-16 md:mb-24"
         >
-          <h2 className="font-serif text-6xl md:text-8xl font-black text-card-foreground uppercase leading-none">
-            <motion.span whileHover={{ skewX: -5 }}>
-              {t.titleLine1}
-            </motion.span>
+          <div className="flex items-center gap-4 mb-6">
+            <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">
+              02 / {lang === "pt" ? "SOBRE" : "ABOUT"}
+            </span>
+            <div className="h-px flex-1 bg-border max-w-[120px]" />
+          </div>
+
+          <h2 className="font-serif text-6xl md:text-8xl lg:text-9xl font-bold text-card-foreground uppercase leading-[0.85] tracking-[-0.02em]">
+            {t.titleLine1}
             <br />
-            <motion.span className="text-primary" whileHover={{ letterSpacing: "0.05em" }}>
+            {/* Typographic Contrast: Mixed font */}
+            <span className="text-card-foreground/30 font-[family-name:var(--font-italic)] lowercase tracking-normal italic text-7xl md:text-9xl">
               {t.titleLine2}
-            </motion.span>
+            </span>
           </h2>
-          <div className="mt-4 h-[3px] w-24 bg-primary" />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="md:col-span-7"
-          >
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
+          <div className="md:col-span-7">
             <div
-              className="relative mb-10"
+              ref={imgContainerRef}
+              className="relative mb-12"
               onMouseEnter={() => setImgHovered(true)}
               onMouseLeave={() => setImgHovered(false)}
             >
-              <div className="relative overflow-hidden border-2 border-card-foreground/20 max-w-xs">
-                <motion.div animate={{ scale: imgHovered ? 1.05 : 1 }}>
+              <div 
+                className="relative overflow-hidden max-w-xs cursor-pointer rounded-sm"
+                data-cursor-text="DAVI"
+              >
+                {/* Apply parallax y transform and scale on scroll and hover */}
+                <motion.div 
+                  style={{ y: imgYParallax, scale: imgScaleScroll }} 
+                  animate={{ scale: imgHovered ? 1.05 : undefined }}
+                  transition={{ scale: { duration: 0.5 } }}
+                >
                   <Image
                     src="/images/atletico.jpg"
                     alt="Davi Nunes"
                     width={320}
                     height={400}
-                    className={`w-full h-auto object-cover contrast-125 transition-all duration-500 ${imgHovered ? "grayscale-0" : "grayscale"}`}
+                    className="w-full h-[450px] object-cover"
                   />
-                </motion.div>
-
-                <motion.div
-                  className="absolute bottom-0 left-0 right-0 bg-card-foreground/90 px-4 py-3"
-                  initial={{ y: "100%" }}
-                  animate={{ y: imgHovered ? "0%" : "100%" }}
-                >
-                  <p className="font-mono text-[10px] uppercase tracking-widest text-card">
-                    {t.imageCaption}
-                  </p>
                 </motion.div>
               </div>
 
-              <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-card-foreground/40 mt-2">
+              <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-card-foreground/30 mt-3">
                 {t.photoCredit}
               </p>
             </div>
 
-            <p className="font-serif text-2xl leading-relaxed mb-8">
-              {t.paragraph1}
-            </p>
-            <p className="text-card-foreground/70 mb-6">
-              {t.paragraph2}
-            </p>
-            <p className="text-card-foreground/70">
-              {t.paragraph3}
-            </p>
+            <div className="border-l border-border pl-8 md:pl-12">
+              <p className="font-serif text-xl md:text-2xl leading-relaxed mb-8 text-card-foreground">
+                {t.paragraph1}
+              </p>
+              <p className="text-card-foreground/60 text-sm leading-relaxed mb-6">
+                {t.paragraph2}
+              </p>
+              <p className="text-card-foreground/60 text-sm leading-relaxed">
+                {t.paragraph3}
+              </p>
+            </div>
 
-            <div className="mt-8 pt-8 border-t-2 border-card-foreground/10">
-              <p className="font-mono text-xs uppercase tracking-widest text-card-foreground/50 mb-2">
+            <div className="mt-10 pt-8 border-t border-border">
+              <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-card-foreground/40 mb-2">
                 {t.signatureLabel}
               </p>
-              <p className="font-serif text-2xl italic">
+              {/* Added italic styling to signature for coherence */}
+              <p className="font-[family-name:var(--font-italic)] text-4xl italic text-card-foreground">
                 Davi Nunes
               </p>
-              <p className="font-mono text-xs text-primary uppercase tracking-widest mt-1">
+              <p className="font-mono text-[10px] text-primary uppercase tracking-[0.2em] mt-2">
                 {t.role}
               </p>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="md:col-span-5"
-          >
-            <TiltCard className="bg-card-foreground/5 p-8 border border-card-foreground/10">
-              <h3 className="font-mono text-xs uppercase tracking-widest text-primary mb-8">
+          <div className="md:col-span-5">
+            <TiltCard className="bg-muted/50 p-8 border border-border">
+              <h3 className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary mb-8">
                 {t.personalDataTitle}
               </h3>
 
@@ -146,41 +167,41 @@ export function AboutSection() {
                   key={item.label}
                   className={`flex justify-between py-3 ${
                     i !== t.personalData.length - 1
-                      ? "border-b border-card-foreground/10"
+                      ? "border-b border-border"
                       : ""
                   }`}
                 >
-                  <span className="font-mono text-xs uppercase tracking-widest text-card-foreground/50">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-card-foreground/40">
                     {item.label}
                   </span>
-                  <span className="font-sans text-sm font-medium">
+                  <span className="font-sans text-sm text-card-foreground">
                     {item.value}
                   </span>
                 </div>
               ))}
             </TiltCard>
 
-            <div className="mt-6 grid grid-cols-3 gap-4">
+            <div className="mt-8 grid grid-cols-3 gap-4">
               {t.stats.map((stat, i) => (
                 <motion.div
                   key={stat.label}
-                  className="bg-primary text-primary-foreground p-4 text-center"
+                  className="border border-border p-5 text-center group hover:border-primary transition-colors duration-300"
                   onMouseEnter={() => setHoveredStat(i)}
                   onMouseLeave={() => setHoveredStat(null)}
-                  whileHover={{ scale: 1.08 }}
+                  whileHover={{ y: -4 }}
                 >
-                  <p className="font-serif text-3xl font-black">
+                  <p className="font-serif text-3xl font-bold text-foreground group-hover:text-primary transition-colors">
                     {stat.number}
                   </p>
-                  <p className="font-mono text-[10px] uppercase tracking-widest mt-1">
+                  <p className="font-mono text-[9px] uppercase tracking-[0.2em] mt-2 text-muted-foreground">
                     {stat.label}
                   </p>
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

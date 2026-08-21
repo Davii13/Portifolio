@@ -34,7 +34,7 @@ export function ThemeToggle() {
       <button
         onClick={toggleTheme}
         onMouseEnter={playHover}
-        className="flex items-center gap-2 group px-3 py-[6px] border border-border hover:border-primary transition-colors duration-300"
+        className="flex items-center gap-2 group px-3 py-1.5 border border-border hover:border-primary transition-colors duration-300"
       >
         <div className="relative w-4 h-4 overflow-hidden">
           <div
@@ -45,7 +45,7 @@ export function ThemeToggle() {
             <Moon size={16} className="text-muted-foreground group-hover:text-primary transition-colors h-4" />
           </div>
         </div>
-        <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground group-hover:text-primary transition-colors whitespace-nowrap">
+        <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground group-hover:text-primary transition-colors whitespace-nowrap">
           {isDark ? texts.themeToggle.dark[lang] : texts.themeToggle.light[lang]}
         </span>
       </button>

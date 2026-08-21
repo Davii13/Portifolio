@@ -164,20 +164,20 @@ function BookCard({ book, i, isInView, label }: { book: any; i: number; isInView
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, delay: i * 0.1 }}
-      className="flex flex-col items-center gap-4"
+      transition={{ duration: 0.5, delay: i * 0.08 }}
+      className="flex flex-col items-center gap-4 group cursor-pointer"
+      data-cursor-text={useLanguage().lang === 'pt' ? 'LER' : 'READ'}
     >
-      {/* Moldura do Livro - Simplificada ao máximo para evitar bugs de CSS */}
+      {/* Book frame */}
       <div
+        className="relative overflow-hidden transition-transform duration-300 group-hover:-translate-y-2"
         style={{
-          position: 'relative',
-          width: '180px',
-          height: '260px',
+          width: '160px',
+          height: '230px',
           backgroundColor: book.bgColor,
-          borderRadius: '0 4px 4px 0',
-          overflow: 'hidden',
-          boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.3)',
-          borderLeft: '6px solid rgba(0,0,0,0.4)'
+          borderRadius: '0 3px 3px 0',
+          boxShadow: '0 8px 20px -4px rgba(0, 0, 0, 0.15)',
+          borderLeft: '4px solid rgba(0,0,0,0.3)'
         }}
       >
         {/* Tag IMG pura - sem filtros que possam ocultá-la */}
@@ -209,15 +209,15 @@ function BookCard({ book, i, isInView, label }: { book: any; i: number; isInView
           textAlign: 'center',
           zIndex: 5
         }}>
-          <h3 style={{ color: 'white', fontSize: '12px', fontWeight: 'bold', textTransform: 'uppercase' }}>
+          <h3 style={{ color: 'white', fontSize: '11px', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
             {book.title}
           </h3>
         </div>
       </div>
 
-      <div className="text-center">
-        <h4 className="font-serif font-bold text-sm text-foreground">{book.title}</h4>
-        <div className="mt-2 inline-flex items-center gap-1.5 font-mono text-[9px] uppercase text-primary bg-primary/10 px-2 py-1">
+      <div className="text-center max-w-[160px]">
+        <h4 className="font-sans font-medium text-sm text-foreground leading-tight">{book.title}</h4>
+        <div className="mt-2 inline-flex items-center gap-1.5 font-mono text-[9px] uppercase text-primary">
           <BookOpen size={10} />
           {label}
         </div>
@@ -243,19 +243,26 @@ export function BooksSection() {
   }[currentLang]
 
   return (
-    <section id="livros" className="py-24 bg-background" ref={ref}>
+    <section id="livros" className="py-28 md:py-40 bg-background" ref={ref}>
       <div className="mx-auto max-w-7xl px-6">
-        <h2 className="font-serif text-6xl md:text-8xl font-black uppercase mb-16">
-          {t.t1} <span className="text-primary">{t.t2}</span>
+        <div className="flex items-center gap-4 mb-6">
+          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">
+            06 / {currentLang === "pt" ? "LEITURA" : "READING"}
+          </span>
+          <div className="h-px flex-1 bg-border max-w-[120px]" />
+        </div>
+
+        <h2 className="font-serif text-6xl md:text-8xl font-bold uppercase mb-20 leading-[0.85] tracking-[-0.02em]">
+          {t.t1} <span className="text-card-foreground/30 font-[family-name:var(--font-italic)] lowercase tracking-normal italic text-7xl md:text-9xl">{t.t2}</span>
         </h2>
 
         {/* Lendo Atualmente - Destaque */}
         {readingBooks.length > 0 && (
-          <div className="mb-16">
-            <h3 className="font-mono text-xs uppercase tracking-widest text-muted-foreground border-b pb-4 mb-8">
+          <div className="mb-20">
+            <h3 className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground border-b border-border pb-4 mb-10">
               {t.reading}
             </h3>
-            <div className="flex flex-wrap gap-8 justify-center md:justify-start">
+            <div className="flex flex-wrap gap-10 justify-center md:justify-start">
               {readingBooks.map((book, i) => (
                 <BookCard key={`reading-${book.id}`} book={book} i={i} isInView={isInView} label={t.reading} />
               ))}
@@ -265,10 +272,10 @@ export function BooksSection() {
 
         {/* Já Lidos - Grid Responsivo */}
         <div>
-          <h3 className="font-mono text-xs uppercase tracking-widest text-muted-foreground border-b pb-4 mb-8">
+          <h3 className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground border-b border-border pb-4 mb-10">
             {t.read}
           </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-10">
             {readBooks.map((book, i) => (
               <BookCard key={`read-${book.id}`} book={book} i={i} isInView={isInView} label={t.read} />
             ))}

@@ -1,75 +1,3 @@
-/*
-======================================================
-NAVIGATION - DOCUMENTAÇÃO DO COMPONENTE
-======================================================
-
-Descrição:
-Componente de navegação fixo do portfólio, responsivo
-para desktop e mobile, com animações suaves usando
-Framer Motion e microinterações detalhadas.
-
-------------------------------------------------------
-FUNCIONALIDADES PRINCIPAIS
-------------------------------------------------------
-
-1) Scroll Detection
-- Detecta quando a página é rolada > 50px.
-- Altera background e borda do navbar para efeito
-  de transparência com backdrop blur.
-- Atualiza estado 'scrolled'.
-
-2) Menu Desktop
-- Lista de links horizontais para seções do site.
-- Hover com:
-  * Underline animado (retro strike effect)
-  * Estrela (&#x2605) com rotação e opacidade
-- Botão CV com hover que anima fundo e ícone.
-
-3) Menu Mobile
-- Botão toggle Hamburger/X para abrir/fechar menu.
-- AnimatePresence controla a entrada/saída com animação de height e opacity.
-- Links animados individualmente (delay incremental).
-- Inclui botão de download CV adaptado para mobile.
-
-4) Animações e Microinterações
-- Framer Motion para:
-  * Entrada do navbar (slide down)
-  * Hover em links (underline, estrela, escala)
-  * Menu mobile (fade + expand/collapse)
-- Transições suaves (spring, easeOut, duration controlada).
-
-------------------------------------------------------
-ESTRUTURA VISUAL
-------------------------------------------------------
-
-- Topo fixo (fixed) com z-index alto.
-- Logo "MM." com hover animado (skew e scale).
-- Links desktop em flex horizontal.
-- Menu mobile expande em flex-col quando ativo.
-- Botão de download CV sempre visível e animado.
-
-------------------------------------------------------
-TECNOLOGIAS UTILIZADAS
-------------------------------------------------------
-
-- React
-- Next.js (Client Component)
-- Framer Motion
-- Tailwind CSS
-- Lucide React (ícones)
-
-------------------------------------------------------
-OBJETIVO DO DESIGN
-------------------------------------------------------
-
-- Navegação clara e responsiva
-- Microinterações visuais para engajamento
-- Estilo retro editorial com hover effects
-- Compatível com desktop e mobile
-- Suavidade na experiência do usuário
-
-======================================================
-*/
 "use client"
 
 import { useState, useEffect } from "react"
@@ -121,24 +49,19 @@ export function Navigation() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-background/95 backdrop-blur-sm border-b border-border"
+          ? "bg-background/90 backdrop-blur-md border-b border-border"
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
+      <div className="mx-auto max-w-7xl px-6 py-5 flex items-center justify-between">
         {/* LOGO */}
         <a
           href="#"
-          className="group font-serif text-2xl font-black text-foreground tracking-tight relative"
+          className="group font-serif text-sm font-bold text-foreground tracking-[0.2em] uppercase relative"
         >
-          <span className="relative inline-block transition-transform duration-200 group-hover:skew-x-[-4deg] group-hover:text-primary">
-            DV
-          </span>
-          <span className="text-primary transition-transform duration-200 group-hover:scale-150 inline-block">
-            .
-          </span>
+          DAVI NUNES
         </a>
 
         {/* MENU DESKTOP */}
@@ -151,15 +74,12 @@ export function Navigation() {
                   href={item.href}
                   onMouseEnter={playHover}
                   onClick={playClick}
-                  className="group relative font-mono text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors block"
+                  className="group relative font-mono text-[11px] uppercase tracking-[0.15em] text-muted-foreground hover:text-foreground transition-colors duration-300 block py-1"
                 >
                   <span className="relative z-10">{item.label}</span>
 
-                  <motion.span
-                    className="absolute left-0 bottom-[-4px] h-[2px] bg-primary origin-left"
-                    initial={{ scaleX: 0 }}
-                    whileHover={{ scaleX: 1 }}
-                    transition={{ duration: 0.25 }}
+                  <span
+                    className="absolute left-0 bottom-0 h-[1px] bg-primary origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
                     style={{ width: "100%" }}
                   />
                 </a>
@@ -174,7 +94,7 @@ export function Navigation() {
             <button
               onClick={() => { playClick(); toggleLang(); }}
               onMouseEnter={playHover}
-              className="relative px-4 py-2 font-mono text-[10px] uppercase tracking-widest
+              className="relative px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.15em]
                          border border-border text-muted-foreground
                          hover:text-primary hover:border-primary
                          transition-all duration-300"
@@ -189,10 +109,9 @@ export function Navigation() {
               href="#download"
               onMouseEnter={playHover}
               onClick={playClick}
-              className="group relative flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 font-mono text-xs uppercase tracking-widest overflow-hidden transition-transform duration-200 hover:scale-105 active:scale-95"
+              className="group relative flex items-center gap-2 border border-foreground text-foreground px-4 py-2 font-mono text-[10px] uppercase tracking-[0.15em] overflow-hidden transition-all duration-300 hover:bg-foreground hover:text-background"
             >
-              <span className="absolute inset-0 bg-foreground translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-              <Download size={14} className="relative z-10" />
+              <Download size={12} className="relative z-10" />
               <span className="relative z-10">
                 {lang === "pt" ? "Baixar CV" : "Download CV"}
               </span>
@@ -218,7 +137,7 @@ export function Navigation() {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-background border-b border-border overflow-hidden"
           >
-            <div className="px-6 py-6 flex flex-col gap-4">
+            <div className="px-6 py-8 flex flex-col gap-5">
               {navItems[lang].map((item, i) => (
                 <motion.a
                   key={item.href}
@@ -227,7 +146,7 @@ export function Navigation() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
                   onClick={() => { playClick(); setIsOpen(false); }}
-                  className="font-mono text-sm uppercase tracking-widest text-muted-foreground hover:text-primary"
+                  className="font-mono text-sm uppercase tracking-[0.15em] text-muted-foreground hover:text-primary transition-colors"
                 >
                   {item.label}
                 </motion.a>
@@ -237,7 +156,7 @@ export function Navigation() {
               <button
                 onClick={toggleLang}
                 className="mt-4 px-4 py-2 w-fit border border-border
-                           font-mono text-xs uppercase tracking-widest
+                           font-mono text-xs uppercase tracking-[0.15em]
                            text-muted-foreground hover:text-primary hover:border-primary
                            transition-all"
               >
@@ -247,7 +166,7 @@ export function Navigation() {
               <a
                 href="#download"
                 onClick={() => setIsOpen(false)}
-                className="mt-2 flex items-center gap-2 bg-primary text-primary-foreground px-4 py-3 font-mono text-xs uppercase tracking-widest w-fit"
+                className="mt-2 flex items-center gap-2 border border-foreground text-foreground px-4 py-3 font-mono text-xs uppercase tracking-[0.15em] w-fit hover:bg-foreground hover:text-background transition-colors"
               >
                 <Download size={14} />
                 {lang === "pt" ? "Baixar CV" : "Download CV"}

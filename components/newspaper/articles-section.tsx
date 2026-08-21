@@ -3,7 +3,7 @@
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
 import { useLanguage } from "@/context/LanguageContext"
-import { PenTool, ArrowRight } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 
 // Dados fixos (placeholder) para o blog. Idealmente viriam do i18n ou CMS.
 const articlesList = {
@@ -91,54 +91,56 @@ export function ArticlesSection() {
   const articles = articlesList[lang]
 
   return (
-    <section id="artigos" className="relative bg-card py-24 md:py-32" ref={ref}>
+    <section id="artigos" className="relative bg-card py-28 md:py-40" ref={ref}>
       <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="mb-16 md:mb-24"
         >
-          <div className="flex items-center gap-2 text-primary mb-4 font-mono uppercase tracking-widest text-xs">
-            <PenTool size={16} />
-            <span>{lang === "pt" ? "Editorial" : "Editorial"}</span>
+          <div className="flex items-center gap-4 mb-6">
+            <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">
+              07 / EDITORIAL
+            </span>
+            <div className="h-px flex-1 bg-border max-w-[120px]" />
           </div>
-          <h2 className="font-serif text-6xl md:text-8xl font-black text-card-foreground uppercase leading-none">
-            <span>{lang === "pt" ? ".Arti" : ".Arti"}</span>
+
+          <h2 className="font-serif text-6xl md:text-8xl lg:text-9xl font-bold text-card-foreground uppercase leading-[0.85] tracking-[-0.02em]">
+            {lang === "pt" ? "ARTI" : "ARTI"}
             <br />
-            <span className="text-primary">{lang === "pt" ? "gos" : "cles"}</span>
+            <span className="text-card-foreground/15">{lang === "pt" ? "GOS" : "CLES"}</span>
           </h2>
-          <div className="mt-6 h-[3px] w-24 bg-primary" />
         </motion.div>
 
         {/* Grid de Artigos */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-0">
           {articles.map((article, i) => (
             <motion.article
               key={article.id}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: i * 0.2 }}
-              className="group cursor-pointer border-b border-border pb-8 block"
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              className="group cursor-pointer border-t border-border py-10 block"
             >
               <div className="flex justify-between items-center mb-4">
-                <span className="font-mono text-xs uppercase tracking-widest text-primary">
+                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary">
                   {article.category}
                 </span>
                 <span className="font-mono text-[10px] uppercase text-muted-foreground">
                   {article.date}
                 </span>
               </div>
-              <h3 className="font-serif text-3xl font-bold text-card-foreground group-hover:text-primary transition-colors duration-300 mb-4 line-clamp-2">
+              <h3 className="font-serif text-2xl md:text-3xl font-bold text-card-foreground group-hover:text-primary transition-colors duration-300 mb-4 leading-tight line-clamp-2">
                 {article.title}
               </h3>
-              <p className="font-sans text-muted-foreground text-sm line-clamp-3 mb-6">
+              <p className="font-sans text-muted-foreground text-sm line-clamp-3 mb-6 leading-relaxed">
                 {article.excerpt}
               </p>
-              <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest group-hover:pl-2 transition-all duration-300">
+              <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground group-hover:text-primary group-hover:translate-x-2 transition-all duration-300">
                 <span>{lang === "pt" ? "Ler Artigo" : "Read Article"}</span>
-                <ArrowRight size={14} className="text-primary" />
+                <ArrowRight size={12} />
               </div>
             </motion.article>
           ))}
