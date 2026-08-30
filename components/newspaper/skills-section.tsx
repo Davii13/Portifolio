@@ -106,12 +106,17 @@ export function SkillsSection() {
 
           <div className="flex flex-wrap gap-3">
             {techTags.filter((t: string) => t).map((tag: string) => (
-              <span
+              <motion.span
                 key={tag}
-                className="font-mono text-[11px] uppercase tracking-wider border border-border px-4 py-2 text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300 cursor-default"
+                whileHover={{
+                  scale: 1.08,
+                  borderColor: "var(--primary)",
+                  color: "var(--primary)"
+                }}
+                className="font-mono text-[11px] uppercase tracking-wider border border-border px-4 py-2 text-muted-foreground transition-all duration-300 cursor-default"
               >
                 {tag}
-              </span>
+              </motion.span>
             ))}
           </div>
         </div>

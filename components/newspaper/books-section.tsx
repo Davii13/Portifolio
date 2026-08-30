@@ -170,14 +170,13 @@ function BookCard({ book, i, isInView, label }: { book: any; i: number; isInView
     >
       {/* Book frame */}
       <div
-        className="relative overflow-hidden transition-transform duration-300 group-hover:-translate-y-2"
+        className="relative overflow-hidden transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-lg"
         style={{
           width: '160px',
           height: '230px',
           backgroundColor: book.bgColor,
-          borderRadius: '0 3px 3px 0',
-          boxShadow: '0 8px 20px -4px rgba(0, 0, 0, 0.15)',
-          borderLeft: '4px solid rgba(0,0,0,0.3)'
+          borderRadius: '2px',
+          boxShadow: '0 4px 12px -2px rgba(0, 0, 0, 0.1)'
         }}
       >
         {/* Tag IMG pura - sem filtros que possam ocultá-la */}

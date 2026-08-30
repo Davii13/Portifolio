@@ -72,7 +72,11 @@ function EducationCard({ edu, i, isInView }: any) {
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: 0.6 + i * 0.15 }}
-      className="border border-border p-6 md:p-8"
+      whileHover={{
+        borderColor: "var(--primary)",
+        boxShadow: "0 4px 12px -2px rgba(0, 0, 0, 0.1)"
+      }}
+      className="border border-border p-6 md:p-8 transition-all duration-300"
       data-cursor-hover
     >
       <span className="inline-block font-mono text-[10px] uppercase tracking-[0.15em] px-3 py-1 mb-4 border text-primary border-primary">

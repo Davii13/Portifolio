@@ -93,12 +93,16 @@ function ProjectCard({
           {/* Tags */}
           <div className="flex flex-wrap gap-2 mb-5">
             {project.tags.map((tag: string) => (
-              <span
+              <motion.span
                 key={tag}
-                className="font-mono text-[10px] uppercase tracking-wider border border-border px-3 py-1 text-muted-foreground group-hover:border-primary/30 transition-colors"
+                whileHover={{
+                  scale: 1.05,
+                  borderColor: "var(--primary)"
+                }}
+                className="font-mono text-[10px] uppercase tracking-wider border border-border px-3 py-1 text-muted-foreground group-hover:border-primary/30 hover:bg-primary/5 transition-all duration-300 cursor-default"
               >
                 {tag}
-              </span>
+              </motion.span>
             ))}
           </div>
 
