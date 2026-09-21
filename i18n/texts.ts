@@ -217,6 +217,15 @@ export const texts = {
             "Desenvolvimento completo (frontend e backend) de plataforma interna de vendas e manutenção. Otimização de performance e experiência do usuário.",
           tags: ["React", "TypeScript", "Node.js", "REST API"],
         },
+        {
+          period: "Ago 2026 - Atual",
+          role: "Estagiário de TI",
+          company: "SECULT - Secretaria de Cultura e Turismo",
+          location: "Belo Horizonte, MG",
+          description:
+            "Suporte técnico e manutenção de sistemas internos, auxiliando na infraestrutura de TI e no atendimento a usuários da secretaria.",
+          tags: ["Suporte Técnico", "Sistemas Internos", "TI"],
+        },
 
 
       ],
@@ -239,6 +248,15 @@ export const texts = {
           description:
             "Full stack development (frontend and backend) of internal sales and maintenance platform. Optimized performance and user experience.",
           tags: ["React", "TypeScript", "Node.js", "REST API"],
+        },
+        {
+          period: "Aug 2026 - Present",
+          role: "IT Intern",
+          company: "SECULT - Secretariat of Culture and Tourism",
+          location: "Belo Horizonte, Brazil",
+          description:
+            "Technical support and maintenance of internal systems, assisting with IT infrastructure and user support for the department.",
+          tags: ["Technical Support", "Internal Systems", "IT"],
         },
 
 
