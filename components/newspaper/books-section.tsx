@@ -80,6 +80,15 @@ const localBooks = {
       year: "2026",
       image: "/assets/books/arquitetura-limpa.png",
     },
+    {
+      id: "BK-009",
+      title: "Fundamentos da Arquitetura de Software",
+      author: "Mark Richards & Neal Ford",
+      status: "reading",
+      bgColor: "#1e293b",
+      year: "2026",
+      image: "/images/fundamentos-arquitetura-software.jpg",
+    },
   ],
 
   en: [
@@ -154,6 +163,15 @@ const localBooks = {
       bgColor: "#1c1917",
       year: "2026",
       image: "/images/arquitetura-limpa.jpg",
+    },
+    {
+      id: "BK-009",
+      title: "Fundamentals of Software Architecture",
+      author: "Mark Richards & Neal Ford",
+      status: "reading",
+      bgColor: "#1e293b",
+      year: "2026",
+      image: "/images/fundamentos-arquitetura-software.jpg",
     },
   ],
 }

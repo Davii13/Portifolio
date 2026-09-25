@@ -616,6 +616,28 @@ export const texts = {
           year: "2025",
           link: "#",
           github: "#"
+        },
+        {
+          id: "PJ-013",
+          title: "HomeFix",
+          subtitle: "Gestão de Serviços de Reparos em Condomínios",
+          description:
+            "Plataforma web e mobile que centraliza a solicitação, contratação e acompanhamento de serviços de manutenção em condomínios residenciais.",
+          detailedDescription:
+            "O HomeFix é uma plataforma de gestão de manutenções condominiais que organiza todo o ciclo de um chamado — da abertura à confirmação do conserto, passando por orçamento, agendamento e execução — aproximando moradores, síndicos e prestadores de serviço. O sistema permite abrir chamados com descrição, categoria, localização e fotos, comparar e aprovar orçamentos, acompanhar em tempo real o deslocamento do prestador, registrar evidências da execução e consultar relatórios financeiros das manutenções. A arquitetura é baseada em microsserviços, com uso de API Gateway, Backend for Frontend (BFF) e comunicação assíncrona via RabbitMQ para processamento de eventos e notificações.",
+          image: "/images/homefix.png",
+          tags: ["React", "Flutter", "Microsserviços", "RabbitMQ", "API Gateway"],
+          technologies: [
+            { name: "React", description: "Frontend web da aplicação" },
+            { name: "Flutter", description: "Aplicativo mobile multiplataforma" },
+            { name: "Microsserviços", description: "Arquitetura com separação de responsabilidades entre serviços" },
+            { name: "API Gateway", description: "Ponto único de entrada das requisições, encaminhando-as aos serviços correspondentes" },
+            { name: "BFF", description: "Camada de adaptação das informações às necessidades de cada cliente" },
+            { name: "RabbitMQ", description: "Mensageria para comunicação assíncrona entre componentes" }
+          ],
+          year: "2026",
+          link: "#",
+          github: "#"
         }
       ],
 
@@ -863,6 +885,28 @@ export const texts = {
           year: "2025",
           link: "#",
           github: "#"
+        },
+        {
+          id: "PJ-013",
+          title: "HomeFix",
+          subtitle: "Condominium Repair Services Management",
+          description:
+            "Web and mobile platform that centralizes the request, hiring, and tracking of maintenance services in residential condominiums.",
+          detailedDescription:
+            "HomeFix is a condominium maintenance management platform that organizes the entire lifecycle of a service request — from opening to repair confirmation, including quotes, scheduling, and execution — bringing residents, building managers, and service providers together. The system allows opening requests with description, category, location, and photos, comparing and approving quotes, tracking the provider's travel in real time, registering execution evidence, and viewing financial reports of the maintenance work. The architecture is based on microservices, using an API Gateway, a Backend for Frontend (BFF), and asynchronous communication via RabbitMQ for event processing and notifications.",
+          image: "/images/homefix.png",
+          tags: ["React", "Flutter", "Microservices", "RabbitMQ", "API Gateway"],
+          technologies: [
+            { name: "React", description: "Web frontend of the application" },
+            { name: "Flutter", description: "Cross-platform mobile app" },
+            { name: "Microservices", description: "Architecture with separated responsibilities across services" },
+            { name: "API Gateway", description: "Single entry point for requests, routing them to the corresponding services" },
+            { name: "BFF", description: "Adaptation layer tailoring information to each client's needs" },
+            { name: "RabbitMQ", description: "Messaging system for asynchronous communication between components" }
+          ],
+          year: "2026",
+          link: "#",
+          github: "#"
         }
       ],
     }
@@ -1050,6 +1094,16 @@ export const texts = {
           year: "2026",
           image: "/images/arquitetura-limpa.jpg",
         },
+        {
+          id: "BK-005",
+          title: "Fundamentos da Arquitetura de Software",
+          author: "Mark Richards & Neal Ford",
+          status: "reading",
+          bgColor: "bg-stone-800",
+          textColor: "text-stone-100",
+          year: "2026",
+          image: "/images/fundamentos-arquitetura-software.jpg",
+        },
       ],
       en: [
         {
@@ -1091,6 +1145,16 @@ export const texts = {
           textColor: "text-stone-100",
           year: "2026",
           image: "/images/arquitetura-limpa.jpg",
+        },
+        {
+          id: "BK-005",
+          title: "Fundamentals of Software Architecture",
+          author: "Mark Richards & Neal Ford",
+          status: "reading",
+          bgColor: "bg-stone-800",
+          textColor: "text-stone-100",
+          year: "2026",
+          image: "/images/fundamentos-arquitetura-software.jpg",
         },
       ],
     },
